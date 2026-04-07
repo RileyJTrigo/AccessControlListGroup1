@@ -1,5 +1,15 @@
 package Presentation;
 
+/*
+ * Description of the Class or method purpose:
+ * A control class that handles the tasks given to the AAS,
+ * through the boundary object AASBoundary. Also implements the methods in AASInterface
+ *
+ * @author Bill Phillips
+ *
+ * @version $ Revision log: 1.0
+ */
+
 public class ACSConnector implements ACSInterface
 {
    private String     userName;

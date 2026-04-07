@@ -1,6 +1,16 @@
 package Presentation;
 import Transport.*;
 
+/*
+ * Description of the Class or method purpose:
+ * A boundary/interface class that the user can interact with to utilize some of the
+ * methods in the subsystem/control class which in this case would be AASConnector.
+ *
+ * @author Bill Phillips
+ *
+ * @version $ Revision log: 1.0
+ */
+
 public class AASBoundary
 {
 
