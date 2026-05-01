@@ -1,0 +1,107 @@
+2026.04.01  09:01:29  Server Created. Port: 1002
+2026.04.01  09:01:29  Server Started
+2026.04.01  09:01:29  Connecting -- waiting for client on port  1002
+2026.04.01  09:01:32  Accepted client on port  1002
+2026.04.01  09:01:32  Server Created. Port: 1002
+2026.04.01  09:01:32  Connecting -- waiting for client on port  1002
+2026.04.01  09:01:32  Server thread started.
+2026.04.01  09:01:32  Server thread connected to Client
+2026.04.01  09:01:32  Server received Authenticate
+2026.04.01  09:01:32  Message Stored
+2026.04.01  09:01:32  Data Analyst Log In
+2026.04.01  09:01:32  Message Received: 
+2026.04.01  09:01:32  Data Analyst Log In
+2026.04.01  09:01:32  Authorized
+2026.04.01  09:01:33  Server Disconnected
+*****
+2026.04.01  09:01:34  Accepted client on port  1002
+2026.04.01  09:01:34  Server Created. Port: 1002
+2026.04.01  09:01:34  Connecting -- waiting for client on port  1002
+2026.04.01  09:01:34  Server thread started.
+2026.04.01  09:01:34  Server thread connected to Client
+2026.04.01  09:01:34  Server received Authenticate
+2026.04.01  09:01:34  Message Stored
+2026.04.01  09:01:34  Data Analyst Log In
+2026.04.01  09:01:34  Message Received: 
+2026.04.01  09:01:34  Data Analyst Log In
+2026.04.01  09:01:34  Authorized
+2026.04.01  09:01:34  Server Disconnected
+*****
+2026.04.01  09:01:35  Accepted client on port  1002
+2026.04.01  09:01:35  Server Created. Port: 1002
+2026.04.01  09:01:35  Connecting -- waiting for client on port  1002
+2026.04.01  09:01:35  Server thread started.
+2026.04.01  09:01:35  Server thread connected to Client
+2026.04.01  09:01:35  Server received Authenticate
+2026.04.01  09:01:35  Message Stored
+2026.04.01  09:01:35  Data Analyst NOT Logged In
+2026.04.01  09:01:35  Message Received: 
+2026.04.01  09:01:35  Data Analyst NOT Logged In
+2026.04.01  09:01:35  NOT Authorized
+2026.04.01  09:01:35  Server Disconnected
+*****
+2026.04.01  09:01:36  Accepted client on port  1002
+2026.04.01  09:01:36  Server Created. Port: 1002
+2026.04.01  09:01:36  Connecting -- waiting for client on port  1002
+2026.04.01  09:01:36  Server thread started.
+2026.04.01  09:01:36  Server thread connected to Client
+2026.04.01  09:01:36  Server received Authenticate
+2026.04.01  09:01:36  Message Stored
+2026.04.01  09:01:36  Data Analyst NOT Logged In
+2026.04.01  09:01:36  Message Received: 
+2026.04.01  09:01:36  Data Analyst NOT Logged In
+2026.04.01  09:01:36  NOT Authorized
+2026.04.01  09:01:36  Server Disconnected
+*****
+2026.04.01  09:01:37  Accepted client on port  1002
+2026.04.01  09:01:37  Server Created. Port: 1002
+2026.04.01  09:01:37  Connecting -- waiting for client on port  1002
+2026.04.01  09:01:37  Server thread started.
+2026.04.01  09:01:37  Server thread connected to Client
+2026.04.01  09:01:37  Server received Authenticate
+2026.04.01  09:01:37  Message Stored
+2026.04.01  09:01:37  Data Analyst Log In
+2026.04.01  09:01:37  Message Received: 
+2026.04.01  09:01:37  Data Analyst Log In
+2026.04.01  09:01:37  Authorized
+2026.04.01  09:01:37  Server Disconnected
+*****
+2026.04.01  09:01:38  Accepted client on port  1002
+2026.04.01  09:01:38  Server Created. Port: 1002
+2026.04.01  09:01:38  Connecting -- waiting for client on port  1002
+2026.04.01  09:01:38  Server thread started.
+2026.04.01  09:01:38  Server thread connected to Client
+2026.04.01  09:01:38  Server received Authenticate
+2026.04.01  09:01:38  Message Stored
+2026.04.01  09:01:38  Data Analyst Log In
+2026.04.01  09:01:38  Message Received: 
+2026.04.01  09:01:38  Data Analyst Log In
+2026.04.01  09:01:38  Authorized
+2026.04.01  09:01:38  Server Disconnected
+*****
+2026.04.01  09:01:39  Accepted client on port  1002
+2026.04.01  09:01:39  Server Created. Port: 1002
+2026.04.01  09:01:39  Connecting -- waiting for client on port  1002
+2026.04.01  09:01:39  Server thread started.
+2026.04.01  09:01:39  Server thread connected to Client
+2026.04.01  09:01:39  Server received Authenticate
+2026.04.01  09:01:39  Message Stored
+2026.04.01  09:01:39  Data Analyst NOT Logged In
+2026.04.01  09:01:39  Message Received: 
+2026.04.01  09:01:39  Data Analyst NOT Logged In
+2026.04.01  09:01:39  NOT Authorized
+2026.04.01  09:01:40  Server Disconnected
+*****
+2026.04.01  09:01:40  Accepted client on port  1002
+2026.04.01  09:01:40  Server Created. Port: 1002
+2026.04.01  09:01:40  Connecting -- waiting for client on port  1002
+2026.04.01  09:01:40  Server thread started.
+2026.04.01  09:01:40  Server thread connected to Client
+2026.04.01  09:01:40  Server received Authenticate
+2026.04.01  09:01:40  Message Stored
+2026.04.01  09:01:40  Data Analyst NOT Logged In
+2026.04.01  09:01:40  Message Received: 
+2026.04.01  09:01:40  Data Analyst NOT Logged In
+2026.04.01  09:01:40  NOT Authorized
+2026.04.01  09:01:40  Server Disconnected
+*****

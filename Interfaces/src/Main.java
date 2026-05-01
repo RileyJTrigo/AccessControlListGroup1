@@ -4,6 +4,15 @@
 import Presentation.*;
 import Transport.*;
 
+/*
+ * Description of the Class or method purpose:
+ * A main class that calls functions in the other classes to make sure they produce correct outputs.
+ * This main class is not meant to be used by actual users only developers for testing purposes.
+ *
+ * @author Bill Phillips
+ *
+ * @version $ Revision log: 1.0
+ */
 
 class TestProg
 {
