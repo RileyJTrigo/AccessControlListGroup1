@@ -7,7 +7,7 @@ import Transport.*;
 
 class TestProg
 {
-   static public void main() {
+   static public void main(String[] args) {
 
       ACSInterface aa = new ACSConnector();
       aa.setUserName("XXX");
