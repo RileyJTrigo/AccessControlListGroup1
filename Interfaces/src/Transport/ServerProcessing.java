@@ -9,7 +9,7 @@ import Presentation.*;
  * 
  * Company:FDU Fall 2018
  * 
- * @author Bill Phillipse ( 214-36-930)
+ * @author Bill Phillips ( 214-36-930)
  * 
  * @version $ Revision log: 1.0
  * 
@@ -29,28 +29,36 @@ public class ServerProcessing
     {
         smservices = SS;
     }
-    
+
     public final void processMessage(CState C)
     {
         final MessageID m = C.mid;
-        if ((m == MessageID.AUTH))
+        if (m == MessageID.MSG)
+        {
+            System.out.println("Audit Message: ");
+            final String msg = C.getMessage();
+            System.out.println(msg);
+        }
+        else if ((m == MessageID.AUTH))
         {
             SubsystemEnums se = C.getDest();
             String d = se.toString();
             System.out.print(d);
             System.out.println(" requests Authorization");
             AccessControlPresInterface ap =
-                   AccessControlPresInterface.Instance();
-            AuditRecordDataStore.Instance().storeAuditRecord(C);
+                  AccessControlPresInterface.Instance();
             final boolean a = ap.Authenticate(C);
+            System.out.print(d);
+            if (a) System.out.println(" was authorized");
+            else System.out.println(" was NOT authorized");
             final String toAddr = rtv.getTSTIP();
-            final int  toPort = rtv.getTSTPort();
+            final int toPort = rtv.getTSTPort();
             C.setToAddr(toAddr);
             C.setPort(toPort);
             if (a) C.setV(1);
-            else   C.setV(0);
-            C.mid = MessageID.AUTHRESP;
+            else C.setV(0);
             sendRMsg(C, new ClientServices());
+
         }
         else if (m == MessageID.AUTHRESP)
         {
@@ -67,17 +75,15 @@ public class ServerProcessing
                 stl.writeToLogger      ("Authenticated");
             if (DBG) System.out.println
                   ("Auth Response Message Received");
-            C.mid = MessageID.AUTH;
 
         }
 
     }
 
-
     public final void sendRMsg(CState cr, ClientServices cs)
     {
         final String hName = cr.getHostname();
-        cr.setHostname(hName);
+ //       cr.setHostname(hName);
         cs.Connect(hName, rtv.getServerPort());
         cs.send(cr);
         cs.Disconnect();

@@ -1,14 +1,6 @@
 package Presentation;
-
-/*
- * Description of the Class or method purpose:
- * A control class that handles the tasks given to the AAS,
- * through the boundary object AASBoundary. Also implements the methods in AASInterface
- *
- * @author Bill Phillips
- *
- * @version $ Revision log: 1.0
- */
+import Application.*;
+import Transport.*;
 
 public class ACSConnector implements ACSInterface
 {
@@ -17,10 +9,12 @@ public class ACSConnector implements ACSInterface
    private SubsystemRoles role;
    private Boolean        auth;
    private SubsystemEnums dest;
-   private final boolean DBG = false;
+   private final boolean DBG = true;
+   private static Authenticate aS = new Authenticate();
 
    public ACSConnector()
-   {}
+   {
+   }
 
    /**
     *  When an authorization
@@ -36,11 +30,10 @@ public class ACSConnector implements ACSInterface
    public void msgReceived()
    {
       if (DBG) System.out.println("Msg processing");
-      //
-      // Run test.
-      //
-      ACSBoundary aB = ACSBoundary.Instance();
-      aB.processInputs(this);
+
+      aS.processInputs(this);
+
+
    }
 
    /**
@@ -98,10 +91,14 @@ public class ACSConnector implements ACSInterface
    {
       this.userName = userName;
    }
+
+   @Override
    public boolean getAuth()
    {
       return auth;
    }
+
+   @Override
    public void setDest(SubsystemEnums s)
    {
       dest = s;

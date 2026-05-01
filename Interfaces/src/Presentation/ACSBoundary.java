@@ -1,15 +1,5 @@
 package Presentation;
 
-/*
- * Description of the Class or method purpose:
- * A boundary/interface class that the user can interact with to utilize some of the
- * methods in the subsystem/control class which in this case would be ACSConnector.
- *
- * @author Bill Phillips
- *
- * @version $ Revision log: 1.0
- */
-
 import Transport.*;
 
 public class ACSBoundary
@@ -21,11 +11,13 @@ public class ACSBoundary
    private ACSInterface        aC = null;
    private RunTimeVars        rtv = null;
    private static CState       cS = null;
+   private static AASInterface aS = null;
 
    private ACSBoundary()
    {
       if (aC == null)
          aC = new ACSConnector();
+      aS = AASBoundary.Instance().getConnector();
       rtv = RunTimeVars.Instance();
       cS  = new CState();
       cS.mid = MessageID.AUTH;
@@ -48,6 +40,7 @@ public class ACSBoundary
       aC.setPassword(passWord);
       aC.setRole(role);
       aC.setDest(ssys);
+      setResp();
       aC.msgReceived();
    }
 
@@ -57,40 +50,58 @@ public class ACSBoundary
       return a;
    }
 
-   //
-   // Test purposes only!
-   //
-   public void processAuthResponse()
+   private void setResp()
    {
-      final String toAddr = rtv.getTSTIP();
-      final int  toPort = rtv.getTSTPort();
-      final SubsystemRoles role = aC.getRole();
-      aC.setRole(role);
-      ClientServices cs = new ClientServices();
-      cs.Connect(toAddr, toPort);
-      cs.send(cS);
-      cs.Disconnect();
-      cS.mid = MessageID.AUTH;
+      cS.mid = MessageID.AUTHRESP;
    }
+
+
+   private void dumpVals
+         (String u, String p, SubsystemRoles r, SubsystemEnums e)
+   {
+      System.out.println("\nTest function called with the following:");
+      System.out.println("ACS received:");
+      System.out.println("User Name: " + u);
+      System.out.println("Password: " + p);
+      System.out.println("Role: " + r);
+      System.out.println("Subsys: " +e);
+   }
+
    public void processInputs(ACSConnector aC)
    {
-      if (cS.mid == MessageID.AUTH) {
+      if (cS.mid == MessageID.AUTH)
+      {
+
          final String uN1 = aC.getUserName();
          final String pw1 = aC.getPassword();
          final SubsystemRoles role1 = aC.getRole();
+         final SubsystemEnums enum1 = aC.getDest();
+         if (DBG) dumpVals(uN1, pw1, role1, enum1);
          final String uN2 = "Bill";
          final String pw2 = "password";
+         final SubsystemEnums enum2 = SubsystemEnums.DAS;
          final SubsystemRoles role2 =
                SubsystemRoles.DATAANALYST;
-         if ((uN1.equals(uN2) == false) ||
+         if   ((uN1.equals(uN2) == false) ||
                (pw1.equals(pw2) == false) ||
-               (role1.equals(role2) == false))
+               (role1.equals(role2) == false)||
+               (enum1.equals(enum2) == false))
+         {
             aC.setNotAuth();
+            aS.setMsg("Actor " + role1 + " NOT Authorized");
+            aS.setAlertable();
+         }
          else
+         {
             aC.setAuth();
+            aS.setMsg("Actor " + role1 + " Authorized");
+         }
+
          cS.mid = MessageID.AUTHRESP;
+         aS.sendMsg();
+
       }
-      else this.processAuthResponse();
+
 
 
 

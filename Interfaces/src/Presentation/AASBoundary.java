@@ -1,16 +1,6 @@
 package Presentation;
 import Transport.*;
 
-/*
- * Description of the Class or method purpose:
- * A boundary/interface class that the user can interact with to utilize some of the
- * methods in the subsystem/control class which in this case would be AASConnector.
- *
- * @author Bill Phillips
- *
- * @version $ Revision log: 1.0
- */
-
 public class AASBoundary
 {
 
@@ -35,21 +25,41 @@ public class AASBoundary
 
    public AASInterface getConnector()
    {
-      return AASConnector;
+      return aS;
    }
 
    public void sendMsg()
    {
       final String sm = aS.getMsg();
+      if (sm == null)
+      {
+         System.out.println("No Audit Message Sent!");
+      }
+      final boolean v = aS.getAlertable();
+      System.out.print("\nAudit Message Sent: ");
+      System.out.println(sm);
+      if (v) System.out.println("ALERT SET\n");
+
+   }
+
+   public void sendMsg2()
+   {
+      final String sm = aS.getMsg();
       final boolean v = aS.getAlertable();
       final int vi = v? 1 : 0;
-      cS.mid = MessageID.AUTH;
+      cS.mid = MessageID.MSG;
       cS.setMessage(sm);
       cS.setV(vi);
-      String toIP = rtv.getAASIP();
-      cSv.Connect(toIP, rtv.getServerPort());
+      String toIP = rtv.getTSTIP();
+      final int p = rtv.getTSTPort();
+      cS.setToAddr(toIP);
+      cS.setPort(p);
+      cS.setHostname(toIP);
+      if (cSv == null) cSv = new ClientServices();
+      cSv.Connect(toIP, p);
       cSv.send(cS);
       cSv.Disconnect();
+
    }
 
 }

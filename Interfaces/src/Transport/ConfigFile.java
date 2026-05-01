@@ -44,7 +44,11 @@ import java.io.*;
 
 public class ConfigFile
 {
+<<<<<<<< HEAD:IdeaProjects/Interfaces/src/Transport/ConfigFile.java
    private static String configFile = "ID.config";
+========
+   private static String configFile = "Interfaces/src/Transport/ID.config";
+>>>>>>>> origin/remove-old-code-and-make-program-runnable:Interfaces/src/Transport/ConfigFile.java
    private static ConfigFile cf = null;
    private static SubsystemEnums mySubsys = null;
 

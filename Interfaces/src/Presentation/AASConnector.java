@@ -1,28 +1,18 @@
 package Presentation;
 
-/*
- * Description of the Class or method purpose:
- * A control class that handles the tasks given to the AAS,
- * through the boundary object AASBoundary. Also implements the methods in AASInterface
- *
- * @author Bill Phillips
- *
- * @version $ Revision log: 1.0
- */
-
 public class AASConnector implements AASInterface
 {
    private SubsystemEnums dest;
-   private String           ms;
-   private boolean           v;
-
+   private static String           ms;
+   private static boolean           v;
+   AASBoundary aasb = null;
    @Override
    public void msgReceived(){}
 
    @Override
    public void sendMsg()
    {
-      AASBoundary aasb = AASBoundary.Instance();
+      if(aasb == null) aasb = AASBoundary.Instance();
       aasb.sendMsg();
    }
 
