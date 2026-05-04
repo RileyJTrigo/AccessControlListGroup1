@@ -44,7 +44,7 @@ import java.io.*;
 
 public class ConfigFile
 {
-   private static String configFile = "Interfaces/src/Transport/ID.config";
+   private static String configFile = "Interfaces/src/Transport/ID.Config";
    private static ConfigFile cf = null;
    private static SubsystemEnums mySubsys = null;
 
