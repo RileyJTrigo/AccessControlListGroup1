@@ -1,5 +1,5 @@
 # AccessControlList — Group 1
-**Moravian University | CSCI 121**
+**Moravian University | CSCI 234**
 > Determines who is allowed to use the PWMS system and what they have access to.
 
 [![Baseline](https://img.shields.io/badge/Baseline-B1.0-green)]()
