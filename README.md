@@ -84,7 +84,7 @@ cd AccessControlListGroup1
 
 ### 2. Compile
 ```bash
-javac -d out -sourcepath Interfaces/src \
+javac -d out -sourcepath src \
   src/Presentation/SubsystemEnums.java \
   src/Presentation/SubsystemRoles.java \
   src/Application/AccessControlList.java \
