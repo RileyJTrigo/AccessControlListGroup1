@@ -85,10 +85,10 @@ cd AccessControlListGroup1
 ### 2. Compile
 ```bash
 javac -d out -sourcepath Interfaces/src \
-  Interfaces/src/Presentation/SubsystemEnums.java \
-  Interfaces/src/Presentation/SubsystemRoles.java \
-  Interfaces/src/Application/AccessControlList.java \
-  Interfaces/src/Test/AccessControlListTest.java
+  src/Presentation/SubsystemEnums.java \
+  src/Presentation/SubsystemRoles.java \
+  src/Application/AccessControlList.java \
+  src/Test/AccessControlListTest.java
 ```
 
 ### 3. Run the test suite
